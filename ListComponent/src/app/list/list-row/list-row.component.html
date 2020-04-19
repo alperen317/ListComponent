@@ -1,0 +1,7 @@
+<ng-container>
+    <ng-content></ng-content>
+    <ng-container *ngTemplateOutlet="column"></ng-container>
+</ng-container>
+<ng-template #column>
+    <ng-content select="app-list-column"></ng-content>
+</ng-template>

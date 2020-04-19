@@ -1,0 +1,24 @@
+<div>
+    <ng-container *ngIf="!loading">
+        <table *ngIf="!empty">
+            <ng-container *ngTemplateOutlet="header"></ng-container>
+            <tbody>
+                <ng-container *ngTemplateOutlet="row"></ng-container>
+            </tbody>
+        </table>
+        <ng-container *ngIf="empty">
+            <ng-container *ngTemplateOutlet="emptyContent"></ng-container>
+        </ng-container>
+    </ng-container>
+</div>
+<ng-template #header>
+    <ng-content select="app-list-header"></ng-content>
+</ng-template>
+<ng-template #row>
+    <ng-content select="app-list-row"></ng-content>
+</ng-template>
+<ng-template #emptyContent>
+    <ng-content select="app-list-empty"></ng-content>
+</ng-template>
+
+<button (click)="test()">Button</button>

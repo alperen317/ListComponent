@@ -1,0 +1,37 @@
+<h1>Lists</h1>
+<ng-select placeholder="Select some items" [items]="items" [(ngModel)]="selectedItems" bindLabel="name" bindValue="id"
+  [multiple]="true" (open)="onOpen()" (close)="onClose()" (focus)="onFocus($event)" (search)="onSearch($event)"
+  (blur)="onBlur($event)" (clear)="onClear()" (add)="onAdd($event)" (scrollToEnd)="onScrollToEnd($event)"
+  (remove)="onRemove($event)" (change)="onChange($event)">
+</ng-select>
+
+<br>
+<app-list [(selectedItems)]="selectedItems" [loading]="loading" [loadingSize]="size" [empty]="false">
+  <app-list-header>
+    <app-list-header-item>
+      Title 1
+    </app-list-header-item>
+    <app-list-header-item>
+      Title 2
+    </app-list-header-item>
+    <app-list-header-item>
+      Title 3
+    </app-list-header-item>
+  </app-list-header>
+  <app-list-row *ngFor="let column of size | numberArray" [chevron]="true">
+    <app-list-column width="2">
+      col-1
+    </app-list-column>
+    <app-list-column align="right">
+      col-2
+    </app-list-column>
+    <app-list-column>
+      col-3
+    </app-list-column>
+    <app-list-action [icon]="'chevron-right'"></app-list-action>
+  </app-list-row>
+  <app-list-empty>
+    Bulunamadi
+  </app-list-empty>
+</app-list>
+<br>

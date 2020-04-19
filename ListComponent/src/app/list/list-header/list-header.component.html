@@ -1,0 +1,6 @@
+<app-list-row>
+    <ng-container *ngTemplateOutlet="headerItem"></ng-container>
+</app-list-row>
+<ng-template #headerItem>
+    <ng-content select="app-list-header-item"></ng-content>
+</ng-template>
